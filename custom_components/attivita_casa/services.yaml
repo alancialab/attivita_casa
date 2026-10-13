@@ -1,0 +1,91 @@
+reset:
+  name: Reset Attività
+  description: >-
+    Segna l'attività come completata (oggi o in una data scelta) e ricalcola i
+    giorni rimanenti. Aggiorna lo storico dei completamenti. Opzionalmente crea
+    un evento nel calendario per la prossima scadenza.
+  fields:
+    entity_id:
+      name: Entità attività
+      description: Il sensore dell'attività da resettare.
+      required: true
+      selector:
+        entity:
+          integration: attivita_casa
+          domain: sensor
+    date:
+      name: Data completamento
+      description: >-
+        Data in cui l'attività è stata completata. Se omessa, viene usata la
+        data di oggi.
+      required: false
+      selector:
+        date:
+    calendar_entity:
+      name: Entità calendario
+      description: >-
+        Calendario su cui creare l'evento per la prossima scadenza (opzionale).
+      required: false
+      selector:
+        entity:
+          domain: calendar
+
+snooze:
+  name: Posticipa Attività
+  description: >-
+    Posticipa la scadenza dell'attività di N giorni senza segnarla come completata.
+    Utile quando non puoi eseguirla oggi ma vuoi rimandare la scadenza.
+  fields:
+    entity_id:
+      name: Entità attività
+      description: Il sensore dell'attività da posticipare.
+      required: true
+      selector:
+        entity:
+          integration: attivita_casa
+          domain: sensor
+    days:
+      name: Giorni
+      description: Numero di giorni di cui posticipare la scadenza.
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 365
+          mode: box
+          unit_of_measurement: giorni
+
+set_date:
+  name: Imposta Data Completamento
+  description: >-
+    Imposta manualmente la data dell'ultimo completamento.
+    Utile per correggere errori o impostare una data passata.
+  fields:
+    entity_id:
+      name: Entità attività
+      description: Il sensore dell'attività da modificare.
+      required: true
+      selector:
+        entity:
+          integration: attivita_casa
+          domain: sensor
+    date:
+      name: Data
+      description: La data da impostare come ultimo completamento.
+      required: true
+      selector:
+        date:
+
+undo_snooze:
+  name: Annulla Posticipo
+  description: >-
+    Annulla l'ultimo posticipo (snooze) e ripristina la scadenza originale.
+  fields:
+    entity_id:
+      name: Entità attività
+      description: Il sensore dell'attività di cui annullare il posticipo.
+      required: true
+      selector:
+        entity:
+          integration: attivita_casa
+          domain: sensor

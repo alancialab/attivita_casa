@@ -1,0 +1,7 @@
+{
+    "name": "Attività Casa",
+    "documentation": "https://github.com/alancialab/attivita_casa",
+    "domains": ["sensor"],
+    "content_in_root": false,
+    "render_readme": true
+}
