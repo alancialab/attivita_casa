@@ -1,0 +1,96 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aggiungi Attività",
+                "description": "Configura una nuova attività domestica ricorrente.",
+                "data": {
+                    "name": "Nome attività",
+                    "mode": "Modalità",
+                    "icon": "Icona",
+                    "frequency": "Frequenza (giorni)",
+                    "last_completion": "Ultimo completamento",
+                    "category": "Categoria",
+                    "priority": "Priorità",
+                    "calendar_entity": "Entità calendario",
+                    "notify_enabled": "Abilita notifiche",
+                    "notify_service": "Servizio di notifica"
+                },
+                "data_description": {
+                    "name": "Nome univoco per l'attività",
+                    "mode": "scheduled = con scadenza, tracker = solo tracciamento senza scadenza",
+                    "icon": "Icona MDI (es. mdi:broom)",
+                    "frequency": "Ogni quanti giorni va eseguita (solo per scheduled)",
+                    "last_completion": "Data dell'ultimo completamento (YYYY-MM-DD)",
+                    "category": "Categoria per raggruppare le attività (es. casa, personale, auto)",
+                    "priority": "Priorità dell'attività (high, medium, low)",
+                    "calendar_entity": "Calendario su cui creare eventi (es. calendar.casa)",
+                    "notify_enabled": "Invia notifiche quando l'attività è in scadenza",
+                    "notify_service": "Servizio di notifica (es. notify.telefoni)"
+                }
+            }
+        },
+        "error": {
+            "name_exists": "Un'attività con questo nome esiste già",
+            "invalid_frequency": "La frequenza deve essere almeno 1 giorno"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Modifica Attività",
+                "description": "Modifica le impostazioni dell'attività.",
+                "data": {
+                    "name": "Nome attività",
+                    "mode": "Modalità",
+                    "frequency": "Frequenza (giorni)",
+                    "icon": "Icona",
+                    "last_completion": "Ultimo completamento",
+                    "category": "Categoria",
+                    "priority": "Priorità",
+                    "calendar_entity": "Entità calendario",
+                    "notify_enabled": "Abilita notifiche",
+                    "notify_service": "Servizio di notifica"
+                },
+                "data_description": {
+                    "name": "Nome univoco per l'attività",
+                    "mode": "scheduled = con scadenza, tracker = solo tracciamento",
+                    "frequency": "Ogni quanti giorni va eseguita (solo per scheduled)",
+                    "icon": "Icona MDI (es. mdi:broom)",
+                    "last_completion": "Data dell'ultimo completamento (YYYY-MM-DD)",
+                    "category": "Categoria per raggruppare le attività (es. casa, personale, auto)",
+                    "priority": "Priorità dell'attività (high, medium, low)",
+                    "calendar_entity": "Calendario su cui creare eventi (es. calendar.casa)",
+                    "notify_enabled": "Invia notifiche quando l'attività è in scadenza",
+                    "notify_service": "Servizio di notifica (es. notify.telefoni)"
+                }
+            }
+        }
+    },
+    "services": {
+        "reset": {
+            "name": "Reset Attività",
+            "description": "Segna l'attività come completata oggi e ricalcola i giorni rimanenti."
+        },
+        "snooze": {
+            "name": "Posticipa Attività",
+            "description": "Posticipa la scadenza dell'attività di N giorni senza segnarla come completata."
+        },
+        "undo_snooze": {
+            "name": "Annulla Posticipo",
+            "description": "Annulla l'ultimo posticipo e ripristina la scadenza originale."
+        },
+        "set_date": {
+            "name": "Imposta Data",
+            "description": "Imposta manualmente la data dell'ultimo completamento."
+        }
+    },
+    "exceptions": {
+        "invalid_entity": {
+            "message": "Entità '{entity_id}' non trovata o non appartiene a questa integrazione."
+        },
+        "no_snooze_to_undo": {
+            "message": "Nessun posticipo da annullare per '{entity_id}'."
+        }
+    }
+}
