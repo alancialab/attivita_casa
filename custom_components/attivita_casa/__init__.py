@@ -10,7 +10,7 @@ from homeassistant.helpers.typing import ConfigType
 from .const import DOMAIN
 from .services import async_register_services
 
-PLATFORMS: list[Platform] = [Platform.SENSOR]
+PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BINARY_SENSOR]
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:

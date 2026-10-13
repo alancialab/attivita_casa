@@ -1,7 +1,7 @@
 {
     "domain": "attivita_casa",
     "name": "Attività Casa",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "documentation": "https://github.com/alancialab/attivita_casa",
     "issue_tracker": "https://github.com/alancialab/attivita_casa/issues",
     "dependencies": [],

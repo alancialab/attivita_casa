@@ -12,6 +12,7 @@ Ogni attività è un'entità `sensor` con stato `ok`, `warning` (scadenza vicina
 - **Frequenza** configurabile (giorni tra un completamento e il successivo).
 - **Priorità** (alta / media / bassa) e **categoria** per organizzare le attività.
 - **Storico** degli ultimi completamenti.
+- **Binary sensor "scaduta"**: per ogni attività `scheduled` viene creato anche un `binary_sensor` con `device_class: problem`, che diventa `on` quando l'attività è scaduta. Comodo per automazioni e card che vogliono una condizione booleana diretta.
 - **Notifiche** opzionali alla scadenza e integrazione con un **calendario** (crea l'evento della prossima scadenza).
 - Configurazione interamente da interfaccia (config flow), nessuno YAML.
 
@@ -53,7 +54,8 @@ Tutto da interfaccia. Per ogni attività imposti:
 
 ## Stati e attributi
 
-- **Stato**: `ok`, `warning`, `expired` (per le attività `scheduled`).
+- **Stato** (entità `sensor`): `ok`, `warning`, `expired` (per le attività `scheduled`).
+- **Binary sensor** (`binary_sensor.<attività>_scaduta`): `on` = scaduta, `off` = non scaduta. Solo per attività `scheduled`.
 - **Attributi principali**: nome, giorni rimanenti, ultima data di completamento, storico (ultimi completamenti), priorità, categoria, modalità.
 
 ## Licenza
